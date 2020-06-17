@@ -200,6 +200,7 @@ evaluate_call <- function(call, src = NULL,
     if (!is.null(time))
       attr(output[[srcindex]]$src, 'timing') <- time
 
+	attr(output[[srcindex]]$eval,  'expr') <- expr
     # If visible or the value handler has multi args, process and capture output
     if (ev$visible || multi_args) {
       pv <- list(value = NULL, visible = FALSE)
